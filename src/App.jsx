@@ -18,6 +18,7 @@ const LETTERS = ["A", "B", "C", "D"];
 const VIEW_STUDY = "study";
 const VIEW_EXAM = "exam";
 const VIEW_RESULTS = "results";
+const VIEW_GUIDE = "guide";
 
 function shuffleArray(arr) {
   const a = [...arr];
@@ -315,6 +316,14 @@ export default function App() {
             >
               Exam
             </button>
+            <button
+              onClick={() => setView(VIEW_GUIDE)}
+              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition ${
+                view === VIEW_GUIDE ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+              }`}
+            >
+              Guide
+            </button>
           </div>
         </div>
       </div>
@@ -546,6 +555,202 @@ export default function App() {
               ))}
             </div>
           </>
+        )}
+
+        {/* ─── STUDY GUIDE ─── */}
+        {view === VIEW_GUIDE && (
+          <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm prose prose-sm max-w-none">
+            <div className="not-prose mb-6 text-center">
+              <div className="w-14 h-14 mx-auto mb-3 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                </svg>
+              </div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-2">GH-300 Study Guide</h2>
+              <p className="text-sm text-gray-500">Complete guide to GitHub Foundations Certification</p>
+              <div className="mt-4 flex justify-center gap-2">
+                <a 
+                  href="https://github.com/desispeed/gh300-practice-exam/blob/main/STUDY-GUIDE.md" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition"
+                >
+                  View on GitHub →
+                </a>
+              </div>
+            </div>
+
+            <div className="space-y-6 text-gray-700">
+              <section>
+                <h2 className="text-xl font-bold text-gray-900 mb-3">📋 Exam Overview</h2>
+                <ul className="space-y-1 list-disc list-inside">
+                  <li><strong>Duration:</strong> 120 minutes</li>
+                  <li><strong>Questions:</strong> 75 multiple choice</li>
+                  <li><strong>Passing Score:</strong> 70%</li>
+                  <li><strong>Cost:</strong> $99 USD</li>
+                  <li><strong>Validity:</strong> 3 years</li>
+                </ul>
+              </section>
+
+              <section>
+                <h2 className="text-xl font-bold text-gray-900 mb-3">📚 Exam Domains</h2>
+                <div className="space-y-3">
+                  <div className="bg-red-50 border-l-4 border-red-500 p-3 rounded">
+                    <h3 className="font-semibold text-red-900">1. Introduction to Git and GitHub (15%)</h3>
+                    <p className="text-sm text-red-800 mt-1">Version control basics, Git fundamentals, GitHub features</p>
+                  </div>
+                  <div className="bg-blue-50 border-l-4 border-blue-500 p-3 rounded">
+                    <h3 className="font-semibold text-blue-900">2. Working with GitHub Repositories (20%)</h3>
+                    <p className="text-sm text-blue-800 mt-1">Creating repos, cloning, Git commands, commit best practices</p>
+                  </div>
+                  <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded">
+                    <h3 className="font-semibold text-purple-900">3. Collaboration Features (25%)</h3>
+                    <p className="text-sm text-purple-800 mt-1">Branching, merging, pull requests, code review, issues, forking</p>
+                  </div>
+                  <div className="bg-amber-50 border-l-4 border-amber-500 p-3 rounded">
+                    <h3 className="font-semibold text-amber-900">4. Modern Development (20%)</h3>
+                    <p className="text-sm text-amber-800 mt-1">GitHub Actions, Codespaces, Copilot, CI/CD workflows</p>
+                  </div>
+                  <div className="bg-green-50 border-l-4 border-green-500 p-3 rounded">
+                    <h3 className="font-semibold text-green-900">5. Project Management (10%)</h3>
+                    <p className="text-sm text-green-800 mt-1">Projects, milestones, labels, assignees</p>
+                  </div>
+                  <div className="bg-cyan-50 border-l-4 border-cyan-500 p-3 rounded">
+                    <h3 className="font-semibold text-cyan-900">6. Privacy, Security, and Administration (15%)</h3>
+                    <p className="text-sm text-cyan-800 mt-1">Authentication, branch protection, Dependabot, secret scanning, permissions</p>
+                  </div>
+                  <div className="bg-orange-50 border-l-4 border-orange-500 p-3 rounded">
+                    <h3 className="font-semibold text-orange-900">7. Benefits of the GitHub Community (10%)</h3>
+                    <p className="text-sm text-orange-800 mt-1">Open source, discussions, sponsors, marketplace, social features</p>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h2 className="text-xl font-bold text-gray-900 mb-3">💡 Key Topics to Master</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                  <div className="flex items-start gap-2">
+                    <span className="text-green-500 mt-0.5">✓</span>
+                    <span className="text-sm">Git basics and commands</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-green-500 mt-0.5">✓</span>
+                    <span className="text-sm">Branching and merging</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-green-500 mt-0.5">✓</span>
+                    <span className="text-sm">Pull requests and code review</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-green-500 mt-0.5">✓</span>
+                    <span className="text-sm">GitHub Actions fundamentals</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-green-500 mt-0.5">✓</span>
+                    <span className="text-sm">Security features</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-green-500 mt-0.5">✓</span>
+                    <span className="text-sm">Organization management</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-green-500 mt-0.5">✓</span>
+                    <span className="text-sm">Collaboration workflows</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-green-500 mt-0.5">✓</span>
+                    <span className="text-sm">Best practices</span>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h2 className="text-xl font-bold text-gray-900 mb-3">🎯 Exam Tips</h2>
+                <div className="bg-blue-50 rounded-lg p-4 space-y-2">
+                  <p className="text-sm"><strong>Before the exam:</strong></p>
+                  <ul className="text-sm space-y-1 ml-4 list-disc">
+                    <li>Practice hands-on with Git and GitHub regularly</li>
+                    <li>Review GitHub documentation thoroughly</li>
+                    <li>Take multiple practice exams</li>
+                    <li>Understand concepts, don't just memorize</li>
+                  </ul>
+                  <p className="text-sm mt-3"><strong>During the exam:</strong></p>
+                  <ul className="text-sm space-y-1 ml-4 list-disc">
+                    <li>Read questions carefully, look for keywords</li>
+                    <li>Eliminate obviously wrong answers first</li>
+                    <li>Manage your time wisely (1.6 min per question)</li>
+                    <li>Flag uncertain questions to review later</li>
+                    <li>Trust your first instinct</li>
+                  </ul>
+                </div>
+              </section>
+
+              <section>
+                <h2 className="text-xl font-bold text-gray-900 mb-3">📖 Essential Git Commands</h2>
+                <div className="bg-gray-900 text-gray-100 rounded-lg p-4 font-mono text-xs overflow-x-auto">
+                  <div className="space-y-3">
+                    <div>
+                      <div className="text-gray-400 mb-1"># Configuration</div>
+                      <div>git config --global user.name "Your Name"</div>
+                      <div>git config --global user.email "your@email.com"</div>
+                    </div>
+                    <div>
+                      <div className="text-gray-400 mb-1"># Basic Workflow</div>
+                      <div>git status</div>
+                      <div>git add &lt;file&gt;</div>
+                      <div>git commit -m "message"</div>
+                      <div>git push origin main</div>
+                    </div>
+                    <div>
+                      <div className="text-gray-400 mb-1"># Branching</div>
+                      <div>git branch &lt;name&gt;</div>
+                      <div>git checkout &lt;name&gt;</div>
+                      <div>git merge &lt;branch&gt;</div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h2 className="text-xl font-bold text-gray-900 mb-3">🔗 Additional Resources</h2>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-500">→</span>
+                    <a href="https://docs.github.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline text-sm">GitHub Official Docs</a>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-500">→</span>
+                    <a href="https://skills.github.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline text-sm">GitHub Skills (Interactive Tutorials)</a>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-500">→</span>
+                    <a href="https://examregistration.github.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline text-sm">GitHub Certifications</a>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-500">→</span>
+                    <a href="https://git-scm.com/doc" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline text-sm">Git Documentation</a>
+                  </li>
+                </ul>
+              </section>
+
+              <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-6 text-center">
+                <p className="text-lg font-bold text-gray-900 mb-2">📘 Complete Study Guide</p>
+                <p className="text-sm text-gray-600 mb-4">For the full comprehensive study guide with detailed explanations, examples, and more, view the complete markdown file on GitHub.</p>
+                <a 
+                  href="https://github.com/desispeed/gh300-practice-exam/blob/main/STUDY-GUIDE.md" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 transition text-sm"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                  Read Full Study Guide
+                </a>
+              </div>
+            </div>
+          </div>
         )}
       </div>
 
